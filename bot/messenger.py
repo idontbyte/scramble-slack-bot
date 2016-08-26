@@ -1,11 +1,13 @@
 import logging
 import random
+import scramble
 
 logger = logging.getLogger(__name__)
 
 class Messenger(object):
-    def __init__(self, slack_clients):
+    def __init__(self, slack_clients, scramble):
         self.clients = slack_clients
+        self.scramble = scramble
 
     def send_message(self, channel_id, msg):
         # in the case of Group and Private channels, RTM channel payload is a complex dictionary
@@ -35,6 +37,7 @@ class Messenger(object):
     def scramble(self, channel_id):
         bot_uid = self.clients.bot_user_id()
         txt = "starting the game..."
+        self.scramble.game_start()
         self.send_message(channel_id, txt)
 
     def guess(self, channel_id):
