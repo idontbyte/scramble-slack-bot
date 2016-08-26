@@ -47,6 +47,6 @@ class RtmEventHandler(object):
                 elif 'guess' in msg_txt:
                     self.msg_writer.guess(event['channel'])
                 elif 'add' in msg_txt:
-                    self.msg_writer.add(event['channel'],msg_txt)
+                    self.msg_writer.add(event['channel'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
