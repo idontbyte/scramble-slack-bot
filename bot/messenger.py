@@ -44,5 +44,5 @@ class Messenger(object):
    
     def add_words(self, channel_id, msg_txt):
         bot_uid = self.clients.bot_user_id()
-        txt = ("adding words: " += msg_txt)
+        txt = "adding words: ".msg_txt
         self.send_message(channel_id, txt)
