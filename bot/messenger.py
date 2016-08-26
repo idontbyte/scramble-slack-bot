@@ -42,7 +42,7 @@ class Messenger(object):
         txt = "guess test"
         self.send_message(channel_id, txt)
    
-    def add_words(self, channel_id):
+    def add_words(self, channel_id, msg_txt):
         bot_uid = self.clients.bot_user_id()
-        txt = "adding words: "
+        txt = "adding words: " += msg_txt
         self.send_message(channel_id, txt)
